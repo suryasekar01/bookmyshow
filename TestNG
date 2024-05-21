@@ -1,0 +1,35 @@
+//This is our code for TestNG.
+
+package bookmyshow;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+
+public class bookmyshowTestNG {
+	WebDriver driver;
+	@BeforeMethod
+	public void startup() {
+		System.getProperty("webdriver.chrome.driver","C:\\Users\\Surya\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("https://in.bookmyshow.com/");
+		driver.manage().window().maximize();
+	}
+		
+	@Test
+	public void driver() {
+		driver.findElement(By.xpath("//*[@id=\"modal-root\"]/div/div/div/div[1]/div/div/input"));
+		driver.findElement(By.xpath("//*[@id=\"modal-root\"]/div/div/div/div[1]/div/div/input"));
+		driver.findElement(By.xpath("//*[@id=\"modal-root\"]/div/div/div/div[4]/span")).click();
+		driver.findElement(By.xpath("//*[@id=\"modal-root\"]/div/div/div/div[4]/ul/li[266]/div")).click();
+		driver.findElement(By.xpath("//*[@id=\"super-container\"]/div[2]/div[1]/header/div[2]/div/div/div/div[1]/div/a[1]")).click();
+		driver.findElement(By.xpath("//*[@id=\"super-container\"]/div[2]/div[1]/header/div[1]/div/div/div/div[2]/div[2]/div[1]")).click();
+	
+	}
+
+}
+
+
